@@ -2,6 +2,8 @@ const https = require("https");
 const http = require("http")
 const fs = require("fs");
 
+const myModule = require("./my-module.js");
+console.log(myModule.myFunction());
 
 
 https
