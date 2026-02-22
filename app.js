@@ -37,34 +37,38 @@ http
     res.write("Hello World!");
     res.end();
   })
+  .listen(3000, () => {
+    console.log("Server is running on http://localhost:3000");
+  })
   .on("error", (err) => {
     console.log("Error: " + err.message);
   });
 
+const condition = true;
 
-const myPromise = new Promise((resolve, reject) => { 
-  if (condition) { 
-    resolve('Success!'); 
-  } else { 
-    reject('Failure!'); 
-  } 
-}); 
- 
-myPromise.then((result) => { 
-  console.log(result); 
-}).catch((error) => { 
-  console.log(error); 
-}); 
+const myPromise = new Promise((resolve, reject) => {
+  if (condition) {
+    resolve("Success!");
+  } else {
+    reject("Failure!");
+  }
+});
 
+myPromise
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
-async function myFunction() { 
-  try { 
-    const result = await myPromise; 
-    console.log(result); 
-  } catch (error) { 
-    console.log(error); 
-  } 
-} 
- 
-myFunction(); 
+async function myFunction() {
+  try {
+    const result = await myPromise;
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
+}
 
+myFunction();
