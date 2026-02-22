@@ -17,6 +17,10 @@ https
     resp.on("end", () => {
       console.log(JSON.parse(data));
     });
+  })
+  .on("error", (err) => {
+    console.log("Error: " + err.message);
+  });
 
 fs.writeFile("file.txt", "Hello World!", function (err) {
   if (err) throw err;
@@ -37,4 +41,4 @@ http
   })
   .on("error", (err) => {
     console.log("Error: " + err.message);
-  });
+  })
