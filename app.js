@@ -1,4 +1,18 @@
-const http = require("http");
+const http = require("http")
+const fs = require("fs");
+
+
+fs.writeFile("file.txt", "Hello World!", function (err) {
+  if (err) throw err;
+  console.log("File saved!");
+});
+
+
+fs.readFile("file.txt", "utf8", function (err, data) {
+  if (err) throw err;
+  console.log(data);
+});
+
 http
   .createServer(function (req, res) {
     res.writeHead(200, { "Content-Type": "text/html" });
